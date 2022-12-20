@@ -1,0 +1,23 @@
+<!-- As a link -->
+<nav class="navbar navbar-light bg-primary">
+  <a class="navbar-brand text-white" href="#" [innerText]="title"></a>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mt-3">
+      <select class="form-control" (change)="onSelect($event.target)">
+        <option selected disabled [value]="">-- Select Country --</option>
+        <option *ngFor="let country of countryNames" [value]="country.id">{{country.country}}</option>
+      </select>
+    </div>
+
+    <div class="col-md-6 mt-3">
+      <select class="form-control">
+        <option selected [value]="">-- Select State --</option>
+        <option *ngFor="let state of filteredState" [value]="state">{{state}}</option>
+      </select>
+    </div>
+  </div>
+  
+</div>
